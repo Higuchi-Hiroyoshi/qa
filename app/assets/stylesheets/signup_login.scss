@@ -1,0 +1,305 @@
+.registration-main {
+  background-image: image-url('school-1782427_1920.jpg');
+}
+
+.registration-main-t {
+  background-image: image-url('school-1782427_1920.jpg');
+  background-size: 2750px 1547px;
+  background-repeat: no-repeat;
+}
+
+.student-form, .teacher-form {
+  width: 50vw;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.login-form {
+  width: 50vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.form-header {
+  width: 100%;
+  text-align: center;
+  font-size: 44px;
+}
+
+.form-header-text {
+  width: 100%;
+  font-weight: bold;
+  line-height: 100px;
+  border-bottom: 1px solid #f5f5f5;
+  display: flex;
+  justify-content: flex-start;
+  padding: 0 0 0 100px;
+}
+
+.form-group {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.login-form-group {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin: 50px auto;
+  padding-top: 20px;
+}
+
+.login-form-group-sp {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.form-text-wrap {
+  width: 100%;
+}
+
+.form-text {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.indispensable {
+  background: #ea352d;
+  margin-left: 8px;
+  padding: 3px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.indispensable-sp {
+  background: #C0C0C0;
+  margin-left: 8px;
+  padding: 3px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.input-default {
+  width: 100%;
+  margin-top: 5px;
+  height: 48px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 16px;
+  resize: none;
+}
+
+.input-default-sp {
+  width: 100%;
+  margin-top: 5px;
+  height: 48px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 13px;
+  resize: none;
+}
+
+.info-text {
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 3px;
+}
+
+.input-name-wrap {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.input-name {
+  width: 130px;
+  margin: 5px 20px 0 20px;
+  height: 48px;
+  line-height: 30px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 14px;
+  resize: none;
+}
+
+.input-birth-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.input-birth-wrap select {
+  width: 75px;
+  margin-top: 5px;
+  height: 49px;
+  padding-left: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.input-birth-wrap p {
+  line-height: 38px;
+  padding: 0 7px;
+}
+
+.img-upload {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.weight-bold-text {
+  font-size: 14px;
+  font-weight: bold;
+  min-width: 170px;
+  margin-bottom: 3px;
+}
+
+.click-upload {
+  width: 100%;
+}
+
+.click-upload>p {
+  margin-bottom: 5px;
+}
+
+.student-user-detail {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.student-user-detail>.form {
+  width: 300px;
+  padding: 2vh 0;
+}
+
+.student-user-grade {
+  font-weight: bold;
+  min-width: 170px;
+  margin-top: 20px;
+}
+
+.select-box {
+  width: 100%;
+  height: 49px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  padding: 14px 100px;
+}
+
+.field_with_errors {
+  display: contents;
+}
+
+.form-bottom-text {
+  font-size: 15px;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.form-bottom-text>span {
+  color: #0099e8;
+  cursor: pointer;
+}
+
+.register-red-btn {
+  width: 50%;
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+  line-height: 48px;
+  font-size: 14px;
+  margin: 0 160px 80px;
+  cursor: pointer;
+}
+
+.login-red-btn {
+  width: 50%;
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+  line-height: 48px;
+  font-size: 14px;
+  margin: 65px 160px 80px;
+  cursor: pointer;
+}
+
+.signup, .login {
+  width: 100vw;
+  height: 100vh;
+  background-image: image-url('school-1782427_1920.jpg');
+  background-size: cover;
+  display: flex;
+  align-items: center;
+}
+
+.signup-contents, .login-contents {
+  width: 50vw;
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  border-radius: 10px;
+  margin: 200px 0 0 313px;
+}
+
+.signup-title, .login-title {
+  color: black;
+  font-size: 5vh;
+}
+
+.student-signup-btn, .student-login-btn {
+  width: 260px;
+  height: 100px;
+  display: block;
+  color: black;
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  border-radius: 10px;
+  padding: 40px;
+  position: absolute;
+  top: 30vh;
+  left: 55vw;
+}
+
+.teacher-signup-btn, .teacher-login-btn {
+  width: 260px;
+  height: 100px;
+  display: block;
+  color: black;
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  border-radius: 10px;
+  padding: 40px;
+  position: absolute;
+  top: 30vh;
+  left: 25vw;
+}

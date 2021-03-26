@@ -11,14 +11,14 @@
         <%# if !student_user && !teacher_user %>
           <li>新規登録
             <ul class="dropdwn_menu">
-              <li><a href="#" class="link">生徒向け新規登録</a></li>
-              <li><a href="#" class="link">講師向け新規登録</a></li>
+              <li><%= link_to '生徒向け新規登録', new_student_registration_path, class: "link" %></li>
+              <li><%= link_to '講師向け新規登録', new_teacher_registration_path, class: "link" %></li>
             </ul>
           </li>
           <li>ログイン
             <ul class="dropdwn_menu">
-              <li><a href="#" class="link">生徒向けログイン</a></li>
-              <li><a href="#" class="link">講師向けログイン</a></li>
+              <li><%= link_to '生徒向けログイン', new_student_session_path, class: "link" %></li>
+              <li><%= link_to '講師向けログイン', new_teacher_session_path, class: "link" %></li>
             </ul>
           </li>
         <%# else %>
