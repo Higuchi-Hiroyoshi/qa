@@ -10,7 +10,7 @@ class Teacher < ApplicationRecord
     validates :image
     validates :university
     validates :department
-    validates :subject
+    validates :subject1
     validates :pr
   end
 end
