@@ -1,0 +1,53 @@
+<header class='title-contents'>
+  <div class="heading">
+    <h1 class="title">
+      <a href="#1" class="title">TITLE</a>
+    </h1>
+  </div>
+  <div class="navbar">
+    <ul class='dropdwn'>
+      <li><a href="#2" class="link">ABOUT</a></li>
+      <li><a href="#3" class="link">PRESS</a></li>
+        <%# if !student_user && !teacher_user %>
+          <li>新規登録
+            <ul class="dropdwn_menu">
+              <li><a href="#" class="link">生徒向け新規登録</a></li>
+              <li><a href="#" class="link">講師向け新規登録</a></li>
+            </ul>
+          </li>
+          <li>ログイン
+            <ul class="dropdwn_menu">
+              <li><a href="#" class="link">生徒向けログイン</a></li>
+              <li><a href="#" class="link">講師向けログイン</a></li>
+            </ul>
+          </li>
+        <%# else %>
+          <li><%= link_to 'ログアウト', "#", class: "logout" %></li>
+        <%# end %>
+    </ul>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</header>
+<body>
+  <div id="1">
+    <div class='body-content1'>
+      <h2 class='catch-copy'>
+        いつでも君をサポート
+      </h2>
+    </div>
+  </div>
+  <div id="2">
+    <div class='body-content2'>
+      <h2 class='about'>
+        ABOUT
+      </h2>
+    </div>
+  </div>
+  <div id="3">
+    <div class='body-content3'>
+      <h2 class='press'>
+        PRESS
+      </h2>
+    </div>
+  </div>
+</body>
