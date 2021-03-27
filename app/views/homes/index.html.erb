@@ -15,14 +15,13 @@
               <li><%= link_to '講師向け新規登録', new_teacher_registration_path, class: "link" %></li>
             </ul>
           </li>
+        <%# else %>
           <li>ログイン
             <ul class="dropdwn_menu">
               <li><%= link_to '生徒向けログイン', new_student_session_path, class: "link" %></li>
               <li><%= link_to '講師向けログイン', new_teacher_session_path, class: "link" %></li>
             </ul>
           </li>
-        <%# else %>
-          <li><%= link_to 'ログアウト', "#", class: "logout" %></li>
         <%# end %>
     </ul>
   </div>

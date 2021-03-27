@@ -52,7 +52,7 @@
             </div>
           </div>
       <%# else %>
-        <li><%= link_to 'ログアウト', "#", class: "logout" %></li>
+        <li><%= link_to 'ログアウト', destroy_student_session_path, method: :delete, class: "logout" %></li>
       <%# end %>
     </ul>
   </div>
