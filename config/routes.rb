@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   }
 
   root to: "homes#index"
+  resources :homerooms, only: [:index]
+
 end
