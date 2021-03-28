@@ -17,4 +17,7 @@ class  Subject< ActiveHash::Base
     { id: 15, name: '地学' },
     { id: 16, name: '英語' }
   ]
+
+  include ActiveHash::Associations
+  has_many :teachers
   end
