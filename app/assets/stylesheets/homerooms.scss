@@ -70,6 +70,14 @@
   width: 100%;
 }
 
+.comments_lists {
+  height: 350px;
+  font-size: 16px;
+  color: #000;
+  margin-top: 10px;
+  overflow-y: scroll;
+}
+
 .comment-form {
   display: flex;
   justify-content: center;
@@ -83,6 +91,7 @@
 .input-comment {
   width: 700px;
   height: 48px;
+  margin-top: 30px;
   padding: 10px 16px 8px;
   border-radius: 10px;
   border: 1px solid #ccc;
@@ -99,6 +108,7 @@
 .comment-red-btn {
   width: 150px;
   color: #fff;
+  margin-top: 30px;
   background: #ea352d;
   border-radius: 10px;
   border: 1px solid #ea352d;

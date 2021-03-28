@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :teachers, controllers: {
     sessions: 'teachers/sessions',
     passwords: 'teachers/passwords',
@@ -12,6 +13,13 @@ Rails.application.routes.draw do
   }
 
   root to: "homes#index"
-  resources :homerooms, only: [:index]
+
+  resources :homerooms
+
+  resources :students do
+    resources :comments, only: [:index, :create]
+  end
+
+  mount ActionCable.server => '/cable'
 
 end
