@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_26_081541) do
+ActiveRecord::Schema.define(version: 2021_03_27_111556) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -31,6 +31,14 @@ ActiveRecord::Schema.define(version: 2021_03_26_081541) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "student_id"
+    t.text "comment", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["student_id"], name: "index_comments_on_student_id"
   end
 
   create_table "students", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -57,8 +65,8 @@ ActiveRecord::Schema.define(version: 2021_03_26_081541) do
     t.date "birthday", null: false
     t.string "university", null: false
     t.string "department", null: false
-    t.string "subject1", null: false
-    t.string "subject2"
+    t.integer "subject1_id", null: false
+    t.integer "subject2_id"
     t.text "pr", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -70,4 +78,5 @@ ActiveRecord::Schema.define(version: 2021_03_26_081541) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "comments", "students"
 end
