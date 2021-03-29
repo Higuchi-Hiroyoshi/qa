@@ -4,6 +4,57 @@
   padding: 0;
 }
 
+.teacher-contents {
+  height: 350px;
+  overflow-y: scroll;
+  margin-bottom: 10px;
+}
+
+.teacher-users {
+  width: 50vw;
+  padding-top: 100px;
+}
+
+.teacher-list {
+  height: 55vh;
+}
+
+.profile-content {
+}
+
+.teacher-info {
+  margin: 30px 0 0 30px;
+}
+
+.teacher-name, .teacher-subject1, .teacher-pr {
+  width: 27vw;
+  color: #000;
+  margin-top: 5px;
+}
+
+.profile-content {
+  display: flex;
+}
+
+.profile-img {
+  width: 75%;
+  height: 75%;
+  margin: 30px 0 0 60px;
+}
+
+.teacher-btn {
+  width: 30vw;
+  margin: 10px 0 0 110px;
+  display: block;
+  background: #bf1319;
+  border-radius: 10px;
+  color: #fff;
+  line-height: 60px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
 .content{
   margin: 0 auto;
   padding: 40px;
@@ -62,7 +113,7 @@
   border: 0;
   border-radius: 0 10px 10px 0;
   cursor: pointer;
-  background-color: #000000;
+  background-color: #ea352d;
   padding: 10px;
 }
 

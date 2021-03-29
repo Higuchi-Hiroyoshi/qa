@@ -65,8 +65,8 @@ ActiveRecord::Schema.define(version: 2021_03_27_111556) do
     t.date "birthday", null: false
     t.string "university", null: false
     t.string "department", null: false
-    t.integer "subject1_id", null: false
-    t.integer "subject2_id"
+    t.string "subject1_id", null: false
+    t.string "subject2_id"
     t.text "pr", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"

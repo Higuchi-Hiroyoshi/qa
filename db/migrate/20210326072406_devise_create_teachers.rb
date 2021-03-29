@@ -9,11 +9,10 @@ class DeviseCreateTeachers < ActiveRecord::Migration[6.0]
       t.string :name,               null: false
       t.string :phonenumber,        null: false
       t.date :birthday,             null: false
-    
       t.string :university,         null: false
       t.string :department,         null: false
-      t.integer :subject1_id,       null: false
-      t.integer :subject2_id
+      t.string :subject1_id,        null: false
+      t.string :subject2_id
       t.text :pr,                   null: false
 
       ## Recoverable
