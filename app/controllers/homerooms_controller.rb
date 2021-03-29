@@ -2,6 +2,7 @@ class HomeroomsController < ApplicationController
 
   def index
     @comments = Comment.all
+    @teachers = Teacher.all
   end
 
   def create

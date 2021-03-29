@@ -7,73 +7,14 @@
   <div class="navbar">
     <ul class='dropdwn'>
       <%# if !student_user && !teacher_user %>
-        <li><a class="js-modal-open" href="" data-target="modal1">探す</a></li>
-        <li><a class="js-modal-open" href="" data-target="modal2">つぶやき</a></li>
-        <li><a class="js-modal-open" href="" data-target="modal3">お役立ち情報</a></li>
-        <li><a class="js-modal-open" href="" data-target="modal4">マイページ</a></li>
-          <div id="modal1" class="modal js-modal">
-            <div class="modal_bg js-modal-close"></div>
-            <div class="modal_content">
-              <a class="js-modal-close" href="">×</a>
-              <form class="search-form" action="#">
-                <input class='input-box' placeholder='キーワードから探す'>
-                  <button class="search-button">
-                    <%= image_tag "search.png", class:"search-icon" %>
-                  </button>
-              </form>
-            </div>
-          </div>
-          <div id="modal2" class="modal js-modal">
-            <div class="modal_bg js-modal-close"></div>
-            <div class="modal_content">
-              <a class="js-modal-close" href="">×</a>
-              <div class="main-container">
-                <div class="container">
-                  <div class="comments_lists">
-                    <% @comments.each do |comment| %>
-                      <%#div class="message-user">
-                        <%= @student.username(student.id) %>
-                      <%#/div%>
-                      <div class="message-date">
-                        <%= l comment.created_at %>
-                      </div>
-                      <div class="message-comment">
-                        <%= comment.comment %>
-                      </div>
-                    <% end %>
-                  </div>
-                </div>
-              </div>
-              <%= form_with(model: @student, class: 'comment-form', local: true) do |form| %>
-                <div class="form-input">
-                  <%= form.text_field :comment, class: 'input-comment', placeholder: "いまなにしてる？" %>
-                </div>
-                <div class='actions-sp'>
-                  <%= form.submit "送信", class: 'comment-red-btn'%>
-                </div>
-              <% end %>
-            </div>
-          </div>
-          <div id="modal3" class="modal js-modal">
-            <div class="modal_bg js-modal-close"></div>
-            <div class="modal_content">
-              <p>1つ目モーダルウィンドウです。ここにモーダルウィンドウで表示したいコンテンツを入れます。モーダルウィンドウを閉じる場合は下の「閉じる」をクリックするか、背景の黒い部分をクリックしても閉じることができます。</p>
-                <a class="js-modal-close" href="">閉じる</a>
-            </div>
-          </div>
-          <div id="modal4" class="modal js-modal">
-            <div class="modal_bg js-modal-close"></div>
-            <div class="modal_content">
-              <p>1つ目モーダルウィンドウです。ここにモーダルウィンドウで表示したいコンテンツを入れます。モーダルウィンドウを閉じる場合は下の「閉じる」をクリックするか、背景の黒い部分をクリックしても閉じることができます。</p>
-                <a class="js-modal-close" href="">閉じる</a>
-            </div>
-          </div>
+        <li><a class="js-modal-open" href="" data-target="modal1">BOOKING</a></li>
+        <li><a class="js-modal-open" href="" data-target="modal2">TIMELINE</a></li>
+        <li><a class="js-modal-open" href="" data-target="modal3">MY PAGE</a></li>
       <%# else %>
-        <li><%= link_to 'ログアウト', destroy_student_session_path, method: :delete, class: "logout" %></li>
+        <li><%= link_to 'ログアウト', destroy_teacher_session_path, method: :delete, class: "logout" %></li>
       <%# end %>
     </ul>
   </div>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 </header>
 <body>
   <div id="1">
@@ -83,4 +24,78 @@
       </h2>
     </div>
   </div>
+  <div id="modal1" class="modal js-modal">
+    <div class="modal_bg js-modal-close"></div>
+    <div class="modal_content">
+      <a class="js-modal-close" href="">×</a>
+        <div class='teacher-contents'>
+          <ul class='teacher-users'>
+            <% @teachers.each do |teacher| %>
+              <li class='teacher-list'>
+                <div class='profile-content'>
+                <%= image_tag teacher.image, class: "profile-img" if teacher.image.attached? %>
+                  <div class='teacher-info'>
+                    <div class='teacher-name'>
+                      氏名：<%= teacher.name %>
+                    </div>
+                    <div class='teacher-subject1'>
+                      得意科目：<%= teacher.subject1_id %>
+                    </div>
+                    <div class='teacher-pr'>
+                      自己PR：<%= teacher.pr%>
+                    </div>
+                  </div>
+                </div>
+                <div class="teacher-btn"><span>依頼</span></div>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      <form class="search-form" action="#">
+        <input class='input-box' placeholder='キーワードから探す'>
+          <button class="search-button">
+            <%= image_tag "search.png", class:"search-icon" %>
+          </button>
+      </form>
+    </div>
+  </div>
+  <div id="modal2" class="modal js-modal">
+    <div class="modal_bg js-modal-close"></div>
+    <div class="modal_content">
+      <a class="js-modal-close" href="">×</a>
+      <div class="main-container">
+        <div class="container">
+          <div class="comments_lists">
+            <% @comments.each do |comment| %>
+              <%#div class="message-user">
+                <%= @student.username(student.id) %>
+              <%#/div%>
+              <div class="message-date">
+                <%= l comment.created_at %>
+              </div>
+              <div class="message-comment">
+                <%= comment.comment %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <%= form_with(model: @student, class: 'comment-form', local: true) do |form| %>
+        <div class="form-input">
+          <%= form.text_field :comment, class: 'input-comment', placeholder: "いまなにしてる？" %>
+        </div>
+        <div class='actions-sp'>
+          <%= form.submit "送信", class: 'comment-red-btn'%>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div id="modal3" class="modal js-modal">
+    <div class="modal_bg js-modal-close"></div>
+    <div class="modal_content">
+      <p>1つ目モーダルウィンドウです。ここにモーダルウィンドウで表示したいコンテンツを入れます。モーダルウィンドウを閉じる場合は下の「閉じる」をクリックするか、背景の黒い部分をクリックしても閉じることができます。</p>
+        <a class="js-modal-close" href="">閉じる</a>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 </body>
