@@ -17,9 +17,7 @@ Rails.application.routes.draw do
   resources :homerooms
 
   resources :students do
-    resources :comments, only: [:index, :create]
+    resources :comments
   end
-
-  mount ActionCable.server => '/cable'
-
+  
 end

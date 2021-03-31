@@ -6,7 +6,10 @@ class HomeroomsController < ApplicationController
   end
 
   def create
-    Comment.create(comment_params)
+    @comment = Comment.new(text: params[:comment])
+    if @comment.save
+      ActionCable.server.broadcast 'comment_channel', content: @comment
+    end
   end
 
   private
