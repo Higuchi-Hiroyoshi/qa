@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_30_095211) do
+ActiveRecord::Schema.define(version: 2021_04_01_051903) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -40,6 +40,36 @@ ActiveRecord::Schema.define(version: 2021_03_30_095211) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "text"
     t.index ["student_id"], name: "index_comments_on_student_id"
+  end
+
+  create_table "homerooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "student_id"
+    t.bigint "comment_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["comment_id"], name: "index_homerooms_on_comment_id"
+    t.index ["student_id"], name: "index_homerooms_on_student_id"
+  end
+
+  create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "student_id"
+    t.bigint "teacher_id"
+    t.text "message", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["student_id"], name: "index_messages_on_student_id"
+    t.index ["teacher_id"], name: "index_messages_on_teacher_id"
+  end
+
+  create_table "schools", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "student_id"
+    t.bigint "teacher_id"
+    t.bigint "messages_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["messages_id"], name: "index_schools_on_messages_id"
+    t.index ["student_id"], name: "index_schools_on_student_id"
+    t.index ["teacher_id"], name: "index_schools_on_teacher_id"
   end
 
   create_table "students", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -80,4 +110,11 @@ ActiveRecord::Schema.define(version: 2021_03_30_095211) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "comments", "students"
+  add_foreign_key "homerooms", "comments"
+  add_foreign_key "homerooms", "students"
+  add_foreign_key "messages", "students"
+  add_foreign_key "messages", "teachers"
+  add_foreign_key "schools", "messages", column: "messages_id"
+  add_foreign_key "schools", "students"
+  add_foreign_key "schools", "teachers"
 end

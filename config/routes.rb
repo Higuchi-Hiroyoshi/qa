@@ -14,10 +14,16 @@ Rails.application.routes.draw do
 
   root to: "homes#index"
 
-  resources :homerooms
+  resources :homerooms do
+    resources :comments do
+    end
+    collection do
+      get 'search'
+    end
+  end
 
-  resources :students do
-    resources :comments
+  resources :schools do
+    resources :messages
   end
   
 end

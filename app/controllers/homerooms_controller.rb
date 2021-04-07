@@ -6,10 +6,16 @@ class HomeroomsController < ApplicationController
   end
 
   def create
-    @comment = Comment.new(text: params[:comment])
-    if @comment.save
-      ActionCable.server.broadcast 'comment_channel', content: @comment
+    comment = Comment.create(comment_params)
+    if comment.save
+      redirect_to homerooms_path(@comment.homeroom)
+    else
+      redirect_to root_path
     end
+  end
+
+  def search
+    @teachers = Teacher.where('subject1_id LIKE(?)', "%#{params[:keyword]}%").limit(20)
   end
 
   private

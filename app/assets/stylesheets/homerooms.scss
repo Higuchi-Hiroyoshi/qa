@@ -5,18 +5,15 @@
 }
 
 .teacher-contents {
-  height: 350px;
+  height: 400px;
   overflow-y: scroll;
-  margin-bottom: 10px;
 }
 
 .teacher-users {
-  width: 100vw;
-  height: 46vh;
-  border-bottom: ridge 1px #000;
 }
 
 .teacher-list {
+  width: 74vw;
   height: 46vh;
 }
 
@@ -24,13 +21,29 @@
 }
 
 .teacher-info {
-  margin: 30px 0 0 30px;
+  margin-left: 30px;
+  height: 34vh;
 }
 
-.teacher-name, .teacher-subject1, .teacher-pr {
-  width: 27vw;
+.teacher-name, .teacher-subject1 {
+  width: 50vw;
   color: #000;
   margin-top: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.teacher-pr {
+  width: 50vw;
+  height: 33.5vh;
+  color: #000;
+  margin-top: 5px;
+  display: -webkit-box;
+  -webkit-line-clamp: 9;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+  overflow: hidden;
 }
 
 .profile-content {
@@ -38,14 +51,14 @@
 }
 
 .profile-img {
-  width: 60%;
-  height: 60%;
-  margin: 30px 0 0 60px;
+  width: 70%;
+  height: 70%;
+  margin-left: 30px;
 }
 
 .teacher-btn {
-  width: 20vw;
-  margin: 10px 0 0 60px;
+  width: 11.8vw;
+  margin: 10px 0 0 30px;
   display: block;
   background: #bf1319;
   border-radius: 10px;
@@ -94,27 +107,28 @@
 }
 
 .search-form {
-  width: 100%;
   height: 8vh;
   display: flex;
   margin-bottom: 5px;
 }
 
 .search-form>.input-box {
-  width: 800px;
+  width: 900px;
   height: 8vh;
-  margin-left: 35px;
+  margin: 20px 0 0 35px;
   padding-left: 10px;
   border-radius: 10px 0 0 10px;
   border: 1px solid #ccc;
 }
 
 .search-button {
-  width: 8vh;
+  width: 59px;
+  height: 59px;
   border: 0;
   border-radius: 0 10px 10px 0;
   cursor: pointer;
   background-color: #ea352d;
+  margin-top: 20px;
   padding: 10px;
 }
 
@@ -136,12 +150,12 @@
 }
 
 .form-input {
-  width: 700px;
+  width: 800px;
   margin: 0 auto;
 }
 
 .input-comment {
-  width: 700px;
+  width: 800px;
   height: 48px;
   margin-top: 30px;
   padding: 10px 16px 8px;
@@ -167,4 +181,78 @@
   line-height: 40px;
   font-size: 14px;
   cursor: pointer;
+}
+
+.question-form {
+  height: 100vh;
+  position: relative;
+}
+
+.form-header-text-sp {
+  width: 50%;
+  font-weight: bold;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.comment-form-sp {
+  width: 50%;
+}
+
+.form-input-sp {
+}
+
+.input-comment {
+  width: 80%;
+  height: 120px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 16px;
+}
+
+.form-image {
+  font-size: 14px;
+  background: #ea8681;
+  border-radius: 10px;
+  border: 1px solid #ea8681;
+  color: white;
+  padding: 15px 270px;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.actions-sp2 {
+  width: 150px;
+}
+
+.comment-red-btn-sp {
+  width: 575px;
+  color: #fff;
+  background: #ea352d;
+  border-radius: 10px;
+  border: 1px solid #ea352d;
+  line-height: 40px;
+  font-size: 14px;
+  margin-left: 70px;
+  cursor: pointer;
+}
+
+.input-comment-sp2 {
+  width: 600px;
+  height: 715px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 16px;
+  resize: none;
+  padding: 10px 10px;
+}
+
+.form-header-right {
+  position: absolute;
+  top: 10px;
+  left: 750px;
 }

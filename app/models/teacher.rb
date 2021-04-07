@@ -1,6 +1,8 @@
 class Teacher < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  has_many :comments
+  has_many :messages , through: :schools
+  has_one_attached :image
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
@@ -15,7 +17,4 @@ class Teacher < ApplicationRecord
   end
 
   validates :subject1_id, numericality: { other_than: 1 }
-
-  has_one_attached :image
-
 end

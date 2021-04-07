@@ -46,17 +46,17 @@
                     </div>
                   </div>
                 </div>
-                <%= link_to "依頼", "#", class:"teacher-btn" %>
+                <%= link_to "依頼", new_school_path, class:"teacher-btn" %>
               </li>
             <% end %>
           </ul>
         </div>
-      <form class="search-form" action="#">
-        <input class='input-box' placeholder='キーワードから探す'>
+        <%= form_with(url: search_homerooms_path, local: true, method: :get, class: "search-form") do |form| %>
+          <%= form.text_field :keyword, placeholder: "キーワードから探す", class: "input-box" %>
           <button class="search-button">
             <%= image_tag "search.png", class:"search-icon" %>
           </button>
-      </form>
+        <% end %>
     </div>
   </div>
   <div id="modal2" class="modal js-modal">
@@ -80,7 +80,7 @@
           </div>
         </div>
       </div>
-      <%= form_with(model: @comment, class: 'comment-form', local: true) do |form| %>
+      <%= form_with(model: [@homeroom, @comment], class: 'comment-form', local: true) do |form| %>
         <div class="form-input">
           <%= form.text_field :comment, class: 'input-comment', placeholder: "いまなにしてる？" %>
         </div>
