@@ -1,7 +1,7 @@
 class Teacher < ApplicationRecord
-  extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to :subject1
-  belongs_to :subject2
+  has_many :comments
+  has_many :messages , through: :schools
+  has_one_attached :image
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
@@ -17,7 +17,4 @@ class Teacher < ApplicationRecord
   end
 
   validates :subject1_id, numericality: { other_than: 1 }
-
-  has_one_attached :image
-
 end

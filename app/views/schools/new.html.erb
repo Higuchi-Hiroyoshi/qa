@@ -1,0 +1,46 @@
+<div class='question-form'>
+  <div class='form-header'>
+    <h1 class='form-header-text-sp'>
+      授業依頼入力
+    </h1>
+    <div class="main-container">
+      <div class="container">
+        <div class="comments_lists">
+          <% @messages.each do |message| %>
+            <%#div class="message-user">
+              <%= student.username %>
+            <%#/div%>
+            <div class="message-date">
+              <%= l message.created_at %>
+            </div>
+            <div class="message-comment">
+              <%= message.comment %>
+            </div>
+            <%= image_tag message.image, class: "message-img" if message.image.attached? %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <%= form_with(model: @message, url: new_school_path, method: :get, class: 'comment-form-sp', local: true) do |form| %>
+      <div class="form-input-sp">
+        <%= form.text_area :message, class: 'input-comment', placeholder: "例）質問内容：" %>
+      </div>
+      <label class="form-image">
+        <span class="image-file">画像</span>
+        <%= form.file_field :image, class: 'hidden' %>
+      </label>
+      <div class='actions-sp2'>
+        <%= form.submit "送信", class: 'comment-red-btn-sp'%>
+      </div>
+    <% end %>
+    </div>
+  </div>
+  <div class="form-header-right">
+    <%= form_with(model: @message, url: new_school_path, class: 'comment-form-sp', local: true) do |form| %>
+      <div class="form-input-sp">
+        <%= form.text_area :message, class: 'input-comment-sp2', placeholder: "メモとしてご利用ください" %>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>

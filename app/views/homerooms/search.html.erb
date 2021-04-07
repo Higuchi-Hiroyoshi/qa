@@ -1,0 +1,23 @@
+<div class='teacher-contents'>
+  <ul class='teacher-users'>
+    <% @teachers.each do |teacher| %>
+      <li class='teacher-list'>
+        <div class='profile-content'>
+        <%= image_tag teacher.image, class: "profile-img" if teacher.image.attached? %>
+          <div class='teacher-info'>
+            <div class='teacher-name'>
+              氏名：<%= teacher.name %>
+            </div>
+            <div class='teacher-subject1'>
+              得意科目：<%= teacher.subject1_id %>
+            </div>
+            <div class='teacher-pr'>
+              自己PR：<%= teacher.pr%>
+            </div>
+          </div>
+        </div>
+        <%= link_to "依頼", new_homeroom_path, class:"teacher-btn" %>
+      </li>
+    <% end %>
+  </ul>
+</div>
